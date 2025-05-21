@@ -1,0 +1,735 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Interactive Media (YR3 SEM2)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="196c85b8-c83b-80f4-9c12-f35f5f3ac161" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌿</span></div><h1 class="page-title">Interactive Media (YR3 SEM2)</h1><p class="page-description"></p></header><div class="page-body"><p id="196c85b8-c83b-8057-aa3c-dd4088337b09" class=""><strong>Week 1 - Sonsbeek</strong></p><p id="196c85b8-c83b-80a5-be6d-f3aee0f75e8f" class="">Different ways of measuring nature</p><p id="196c85b8-c83b-802e-89cf-e6dab5dcb14d" class="">Tool 1: The Measure tool on my iPhone + Camera + Screenshot</p><p id="196c85b8-c83b-807f-9502-e8c57a8221c2" class="">I measured the distances between trees in the park. I was expecting them to be mostly the same due to the fact that I believe they were planted by people, however there was actually quite a large amount of variation. </p><p id="196c85b8-c83b-80b7-b473-cd866d056880" class="">Here’s the results:</p><p id="196c85b8-c83b-8012-847b-cb58125f7f64" class="">5,23m </p><p id="196c85b8-c83b-80ef-b14d-ea6fcd9bf197" class="">4,26m</p><p id="196c85b8-c83b-801e-9b83-d83423cfeec8" class="">6,06m</p><p id="196c85b8-c83b-805e-be25-eff06a99ae8b" class="">2,09m</p><p id="196c85b8-c83b-809b-83b6-c677c8937d0f" class="">7,27m</p><p id="196c85b8-c83b-80a7-bbaa-ff259c8fbbea" class="">6,59m</p><p id="196c85b8-c83b-8021-ac12-d809ce0e6329" class="">6,88m</p><p id="196c85b8-c83b-8033-9614-e8b4f24a154c" class="">5,12m</p><p id="196c85b8-c83b-8036-91a4-d230a59424d5" class="">13,55m</p><p id="196c85b8-c83b-80a0-8201-d7910b663fe8" class="">10,64m</p><p id="196c85b8-c83b-802d-96a3-e10e0670e689" class="">Distanced vary between 2,09m and 13,55m.</p><div id="196c85b8-c83b-806e-8d21-c7b85da62a84" class="column-list"><div id="196c85b8-c83b-80fe-bf93-c64a03e4fb3f" style="width:50%" class="column"><figure id="196c85b8-c83b-80df-bea1-d7c63f45d7ca" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/A4E8FC58-C9B4-44D3-8E57-90128DA47DB1_1_102_o.jpeg"><img style="width:336px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/A4E8FC58-C9B4-44D3-8E57-90128DA47DB1_1_102_o.jpeg"/></a></figure></div><div id="196c85b8-c83b-809e-a641-f99150469e7f" style="width:50%" class="column"><figure id="196c85b8-c83b-8051-8748-d54a4ffe6d85" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/7035FDBE-7F49-449C-AAA1-329AF117BABC_1_102_o.jpeg"><img style="width:384px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/7035FDBE-7F49-449C-AAA1-329AF117BABC_1_102_o.jpeg"/></a></figure></div></div><div id="196c85b8-c83b-801a-aaac-e003a0b9387a" class="column-list"><div id="196c85b8-c83b-809d-8323-fc342c6dc8ec" style="width:50%" class="column"><figure id="196c85b8-c83b-8062-a398-ff5dd37eed4a" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/23771AE7-6E42-4704-BA77-50DE5189F4AB_1_102_o.jpeg"><img style="width:331.97918701171875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/23771AE7-6E42-4704-BA77-50DE5189F4AB_1_102_o.jpeg"/></a></figure></div><div id="196c85b8-c83b-8051-a800-deaff1b1a38d" style="width:50%" class="column"><figure id="196c85b8-c83b-8018-bb25-c755170d9308" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/173BA181-517B-4287-8C9D-5219A4E058E2_1_102_o.jpeg"><img style="width:336px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/173BA181-517B-4287-8C9D-5219A4E058E2_1_102_o.jpeg"/></a></figure></div></div><p id="196c85b8-c83b-804d-a7ce-d2499b665200" class="">Tool 2: A Rock</p><p id="196c85b8-c83b-806b-9697-da4ca410a198" class="">I was also inspired by the way the branches on trees looked, the way they meander and diverge — also a pattern that appears quite a bit in nature, especially rivers and blood vessels. It’s also so interesting to me how manmade paths subconsciously follow this pattern. So I decided to measure these as well using a rock I had in my bag — here’s the rock. I thought this would be a good measuring tool due to it’s shape, specifically the very straight edge and pointy angle it has.</p><p id="196c85b8-c83b-80c8-acd3-c3927eea7aa1" class="">
+</p><figure id="196c85b8-c83b-8051-9fc8-c00b7cfa76d6" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/a3dfebe2-1ded-4561-983c-662aa707e0f3.png"><img style="width:496.1038961038961px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/a3dfebe2-1ded-4561-983c-662aa707e0f3.png"/></a></figure><p id="196c85b8-c83b-8086-8aa8-d65f1308f1c0" class="">
+</p><figure id="196c85b8-c83b-808c-8b35-d823d82888f9" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/Blood-vessels-winter-tree-Amazon-River-delta-leaf-veins-cracked-earth-and-city-plan.png"><img style="width:709.982666015625px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/Blood-vessels-winter-tree-Amazon-River-delta-leaf-veins-cracked-earth-and-city-plan.png"/></a></figure><p id="196c85b8-c83b-80d1-a73e-e7cb061024d7" class="">
+</p><p id="196c85b8-c83b-80ba-9aa1-e04ab22b03c8" class="">I used to rock to measure the distances between two diverging points on a branch and also the angle at witch the new branch emerges.</p><p id="196c85b8-c83b-80e3-91b4-d7c3c521709e" class="">
+</p><div id="196c85b8-c83b-8012-8dcf-d8b8a46e6b57" class="column-list"><div id="196c85b8-c83b-8013-bb71-ff1e5f06cd84" style="width:50%" class="column"><figure id="196c85b8-c83b-800a-af6a-d6fbbf461a1a" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/B48A2590-D4CC-470B-AC21-14FEC4EF56E4_1_105_c.jpeg"><img style="width:331.97918701171875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/B48A2590-D4CC-470B-AC21-14FEC4EF56E4_1_105_c.jpeg"/></a></figure></div><div id="196c85b8-c83b-8073-adda-cdfa312c3c0d" style="width:50%" class="column"><figure id="196c85b8-c83b-8018-8d40-cde8b8f23e24" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/F2C6FB12-088E-4AA8-AA37-B0C3577A149C_1_102_o.jpeg"><img style="width:336px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/F2C6FB12-088E-4AA8-AA37-B0C3577A149C_1_102_o.jpeg"/></a></figure></div></div><div id="196c85b8-c83b-8014-85c1-d71289126dac" class="column-list"><div id="196c85b8-c83b-8079-b2a2-d2d99e38f3e9" style="width:50%" class="column"><figure id="196c85b8-c83b-804c-9479-d5b4721b0014" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/E832F5D6-2D14-4AC2-ACBA-BEAC197711AA_1_102_o.jpeg"><img style="width:332px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/E832F5D6-2D14-4AC2-ACBA-BEAC197711AA_1_102_o.jpeg"/></a></figure></div><div id="196c85b8-c83b-80cb-a766-eba37aad00ed" style="width:50%" class="column"><figure id="196c85b8-c83b-80ea-bb89-ee33b7d4d4ef" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/086E16B4-4EE3-4DF6-A3B2-FD2EAF1D24A2_1_105_c.jpeg"><img style="width:336px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/086E16B4-4EE3-4DF6-A3B2-FD2EAF1D24A2_1_105_c.jpeg"/></a></figure></div></div><p id="196c85b8-c83b-80a5-9cc2-eaedf2c915dd" class="">
+</p><p id="196c85b8-c83b-8070-947a-e017f8dbcd41" class="">I then did some sketching (Tool 3: Notebook &amp; Pen) to see if I could maybe already try to figure out how these hypothetical algorithms could work. </p><p id="196c85b8-c83b-80c2-b310-f8dbb166bdea" class="">
+</p><figure id="196c85b8-c83b-8086-abf5-dc2db985e268" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/CFE9F16B-73DE-4E8C-8A3F-6BAED3BD58E6_1_201_a.heic"><img src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/CFE9F16B-73DE-4E8C-8A3F-6BAED3BD58E6_1_201_a.heic"/></a></figure><p id="196c85b8-c83b-8030-a3b0-e1184fc38bc9" class="">
+</p><p id="196c85b8-c83b-80af-af2f-cf2e30984b03" class="">After I got home after this little excursion I looked up a database of trees in Arnhem to see if I could get more precise information about the distances between trees. This required the Google Earth Pro app in order to open. And the file was actually so dense in a very little space, so it was hard to open. It actually unfortunately did not include any trees in Sonsbeek, but It’s still a great database to have as a reference.</p><p id="196c85b8-c83b-80b2-8805-d8882deae9f5" class="">
+</p><figure id="196c85b8-c83b-8018-867f-fbe7a01bcef8" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/trees_in_arnhem_1.jpg"><img style="width:709.982666015625px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/trees_in_arnhem_1.jpg"/></a></figure><figure id="196c85b8-c83b-8020-9110-d89640e27717" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/trees_in_arnhem_2.jpg"><img style="width:709.982666015625px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/trees_in_arnhem_2.jpg"/></a></figure><p id="19dc85b8-c83b-8099-924e-dfb8cca80bcf" class="">
+</p><p id="196c85b8-c83b-8026-922a-d5c576cc9e37" class=""><strong>Week 2 - Deep Dive into Infinite Numbers</strong></p><p id="19dc85b8-c83b-8019-92e5-ef7c4343d0ff" class="">
+</p><p id="19dc85b8-c83b-8043-9735-ebfa0c64b5b5" class="">I decided to look more into why this pattern, that is seen in rivers and branches, exists. How does it diverge and why can we see it in so many places?</p><p id="19dc85b8-c83b-8057-b404-cd2bb9fe7fcc" class="">A quick google search showed me that this is something called fractals, a term which i was already familiarised with a little bit. A fractal is a shape that infinitely repeats itself — and a great example of this is broccoli — when you cut a broccoli in half you’ll see that at the top there are many smaller branches which when zoomed into resemble a whole broccoli.</p><p id="19dc85b8-c83b-80f7-b93f-ee2b104d6acc" class="">This is actually quite a simple formula — wherever there is one line it will always diverge into two (or sometimes more) and that line will also do the same, until, I guess, the pattern decides it’s had enough.</p><p id="19dc85b8-c83b-80cd-b11f-d2fb71e77cd3" class="">
+</p><figure id="19dc85b8-c83b-80c0-9fa6-d7f50c57a99a" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/exploration-of-fractals-1.png"><img style="width:662px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/exploration-of-fractals-1.png"/></a></figure><p id="19dc85b8-c83b-804d-894a-c9eebf1c9f25" class="">
+</p><p id="19dc85b8-c83b-80de-ae99-c020a191af36" class="">I also recognised the shape at the top of this illustration — the Sierpinski Triangle, which is a triangle that gains a new triangle inside of it with each iteration, eventually growing into an infinitely zoomable triangle. Even though the output isn’t the same, I’ve never before really considered this to be the exact same algorithm present in tree branches.</p><p id="19dc85b8-c83b-802d-b4b6-f80a34129b2d" class="">
+</p><figure id="19dc85b8-c83b-8016-a5eb-e6da69b318d3" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/D514957B-8F3D-4B85-9A2C-D3DF48F33D65_1_201_a.heic"><img src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/D514957B-8F3D-4B85-9A2C-D3DF48F33D65_1_201_a.heic"/></a></figure><p id="19dc85b8-c83b-8024-8ba6-d36baf07948f" class="">
+</p><p id="19dc85b8-c83b-80fb-9981-f2730a19dbe0" class="">Another example of this is the Koch snowflake, a cousin of the Sierpinski Triangle. Similarly, it is also a triangle which gets another triangle added to each of it’s sides with each iteration, eventually turning into an infinitely zoomable snowflake.</p><figure id="19dc85b8-c83b-8073-9692-e44c3503d4ec" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/KochFlake.svg.png"><img style="width:662px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/KochFlake.svg.png"/></a></figure><figure id="19dc85b8-c83b-8022-b0ef-c8f565eb3987" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/Zooming_in_a_point_of_Koch_curve_that_is_not_a_vertex.gif"><img style="width:710px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/Zooming_in_a_point_of_Koch_curve_that_is_not_a_vertex.gif"/></a></figure><p id="19dc85b8-c83b-801b-91e1-e91da2b99cf0" class="">
+</p><p id="19dc85b8-c83b-80dd-ab61-ccec5e55cdaf" class="">Wanting to learn more about these fractals and how their algorithms actually work, I decided to look into infinite numbers, since for example the Sierpinski Triangle is the sum of all infinite numbers. This included a lot of math that I simply did not understand, well I do understand it in theory, but the more complicated the formulas I was reading were, the less I understood.</p><p id="19dc85b8-c83b-8089-91f8-c6be7a3196fa" class="">
+</p><figure id="19dc85b8-c83b-80f1-9665-d609c8886cd3" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/20238195-B41A-4F7B-8714-331C4446573B_1_201_a.heic"><img src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/20238195-B41A-4F7B-8714-331C4446573B_1_201_a.heic"/></a></figure><p id="19dc85b8-c83b-8074-8544-e39b82c05d9f" class="">
+</p><p id="19dc85b8-c83b-80d1-8754-c0849f22a38a" class=""><strong>Week 3 - More Deep Diving</strong></p><p id="19dc85b8-c83b-8041-bd51-cc0ad8fbfa67" class="">
+</p><p id="19dc85b8-c83b-803c-9ee9-e9eace173273" class="">How do these fractals apply to the tree branches I was examining in Sonsbeek? Are they completely the same thing or are there differences? </p><p id="19dc85b8-c83b-8005-8323-d60672e8bdd3" class="">Well, the main difference between the fractals like the Koch snowflake and branches on trees is infinity. Theoretically a branch could keep growing forever, but in reality it never does. </p><p id="19dc85b8-c83b-808d-bd1d-f95190a20901" class="">Another difference is that when a tree branch diverges into two smaller branches, it picks a dominant one, making the other one weaker and less likely to continue and sprout new branches. These smaller branches then also have a higher chance of falling off and disappearing, giving a wavy illusion to the branch.</p><p id="19dc85b8-c83b-800c-a511-c7d65233c0dd" class="">
+</p><p id="19dc85b8-c83b-80a9-bbef-f0040d073aea" class="">(All of these statements are just observations I’m making and may not be completely accurate.) </p><p id="19dc85b8-c83b-803f-a92a-da0813617212" class="">
+</p><figure id="19dc85b8-c83b-801c-8824-ebd94a23cd42" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/43EAEDEC-396B-4999-A870-C42125F41E66_1_105_c.jpeg"><img style="width:661.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/43EAEDEC-396B-4999-A870-C42125F41E66_1_105_c.jpeg"/></a></figure><p id="19dc85b8-c83b-80c7-9a6e-ccdc4b0f340e" class="">
+</p><p id="19dc85b8-c83b-8048-88cc-eac6a3a00839" class="">All of these weird angles we see in this tiny branch are places where it has previously diverged into two, but the smaller, less dominant branch fell off. Often times the more dominant branch is the straighter one, but it doesn’t necessarily have to be the case.</p><p id="19dc85b8-c83b-8055-9d4b-fde1a762fbe6" class="">
+</p><figure id="19dc85b8-c83b-8043-9874-fd8bd67af396" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/086E16B4-4EE3-4DF6-A3B2-FD2EAF1D24A2_1_105_c%201.jpeg"><img style="width:661.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/086E16B4-4EE3-4DF6-A3B2-FD2EAF1D24A2_1_105_c%201.jpeg"/></a></figure><p id="19dc85b8-c83b-8054-a87b-d22f99e169a6" class="">
+</p><p id="19dc85b8-c83b-8000-a6e4-d0bc931ac9f6" class="">This is a great example of a less straight branch being dominant, probably because the straighter one was broken.</p><p id="19dc85b8-c83b-8033-8676-d5acc160c5b9" class="">(This narrowing down of elements already helped me understand the algorithm behind tree branches better, and luckily for me it doesn’t have much to do with infinite numbers.)</p><p id="19dc85b8-c83b-809c-ab17-ed4dfc6f4ad6" class="">Sometimes new branches seem to be able to sprout of old places where the less dominant branches fell of, these are notably tinier and seem to diverge at marginally larger angles than other branches. </p><p id="19dc85b8-c83b-80dc-935f-e4837854ab89" class="">
+</p><figure id="19dc85b8-c83b-8035-9f35-c6dac564f9d8" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/43EAEDEC-396B-4999-A870-C42125F41E66_1_105_c%201.jpeg"><img style="width:661.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/43EAEDEC-396B-4999-A870-C42125F41E66_1_105_c%201.jpeg"/></a></figure><p id="19dc85b8-c83b-8057-9817-cd234f151eb4" class="">
+</p><p id="19dc85b8-c83b-809d-81fd-ff4c1ccf3b4a" class="">I decided to go to google and check if my theories of branches and dominance had some truth to it, and to my surprise it was actually correct. </p><p id="19dc85b8-c83b-8016-8028-f8d03853fd39" class="">
+</p><p id="19dc85b8-c83b-8021-9509-f5b95e841ab1" class=""><strong>“In winter, once the leaves have fallen, you may be able to identify mature deciduous trees by the appearance of their branches. A branch can take two main forms. In one (monopodial) the main growth is in the same direction every year with branching on either side e.g Ash, Aspen and Lombardy Poplar. In the other (sympodial) the main growth changes every time a branch is formed giving a zig-zag and ‘twiggy’ appearance e.g Maples, Limes and Oaks. Note that some trees have straight growth when young but become twiggy when flowers are formed e.g. Horse Chestnut.”</strong></p><p id="19dc85b8-c83b-80ea-868f-d35cb6d8fbaa" class="">
+</p><p id="19dc85b8-c83b-8047-9168-ef1e97c8c889" class=""><a href="https://www.treeguideuk.co.uk/winter-branches/#:~:text=A%20branch%20can%20take%20two,e.g%20Maples%2C%20Limes%20and%20Oaks">https://www.treeguideuk.co.uk/winter-branches/#:~:text=A branch can take two,e.g Maples%2C Limes and Oaks</a>.</p><p id="19dc85b8-c83b-80fa-8c7a-e9dfcaee7855" class="">
+</p><p id="19dc85b8-c83b-806d-a347-e2433858c45a" class="">I did however realise this only occurs on some trees and these types of branches are called sympodial. This article also made me realise that since it’s winter, how is the perfect time to observe tree branches since none of the leaves are there.</p><p id="19dc85b8-c83b-807c-9ca5-e64e1b3a7ff6" class="">I also found out that some branches can even be co-dominant, and especially leaders, which are the main branches of trees. And while it does look cool it is also sometimes very dangerous since the branches can get quite heavy and fall off. However many people get rid of co-dominant branches just because of aesthetics, and not for safety reasons. There can also be multiple dominant branches on a tree competing to be the leader. </p><p id="19dc85b8-c83b-80b0-a6fd-ca69b8e18ffd" class="">
+</p><figure id="19dc85b8-c83b-8028-befe-e53076a55c65" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/FG199-prune-young-trees-1.jpg"><img style="width:709.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/FG199-prune-young-trees-1.jpg"/></a></figure><p id="1abc85b8-c83b-8014-ba56-d3cc74aafefb" class="">
+</p><p id="19dc85b8-c83b-8061-9722-e86fcf572be3" class=""><strong>Break - Initial Code</strong></p><p id="1abc85b8-c83b-8028-897d-ccf422f5e245" class="">
+</p><p id="1abc85b8-c83b-807b-8545-cb70fc1e8c13" class="">(start new branch)</p><p id="1abc85b8-c83b-8057-bec6-c4240184e02e" class="">grow between 5 and 6 cm</p><p id="1abc85b8-c83b-80bb-80e8-eb33e7c27b98" class="">chance of 2 new branches: 99%</p><p id="1abc85b8-c83b-8045-acd2-f9404f526034" class="">if new branches:</p><p id="1abc85b8-c83b-807b-ab0e-fabaa90cc86c" class="">chose dominant branch</p><p id="1abc85b8-c83b-80c1-b5c7-f27bac13bcdf" class="">chance of wind breaking branch: 0,50%</p><p id="1abc85b8-c83b-805f-a786-c1cab19110ef" class="">chance of human breaking branch: 0,50%</p><p id="1abc85b8-c83b-8043-b5e6-c7b5aee8b60e" class="">if wind:</p><p id="1abc85b8-c83b-807d-b06d-dfaeb4c19605" class="">branch ends</p><p id="1abc85b8-c83b-80d8-8d19-d1d323579741" class="">if human:</p><p id="1abc85b8-c83b-8007-a25f-d8649ebce8dc" class="">branch ends</p><p id="1abc85b8-c83b-809c-9866-de524537a09c" class="">if branch ends:</p><p id="1abc85b8-c83b-80bc-8fe1-c26fac40827a" class="">grow leaf</p><p id="1abc85b8-c83b-80ab-9454-d342df843398" class="">
+</p><p id="1abc85b8-c83b-80be-8efe-ed2087523678" class="">.dominant1 {</p><p id="1abc85b8-c83b-800f-8c1a-c6ce09a3741e" class="">grow between 4 and 5 cm</p><p id="1abc85b8-c83b-803f-b3be-f407d0a8d36c" class="">chance of 2 new branches: 95%</p><p id="1abc85b8-c83b-80d6-8a7b-e116952b87ee" class="">chance of wind breaking branch: 1%</p><p id="1abc85b8-c83b-8026-972a-ef8b28422468" class="">chance of human breaking branch: 1%</p><p id="1abc85b8-c83b-8069-9245-e43129dc0bd7" class="">if wind:</p><p id="1abc85b8-c83b-8057-ad8a-d1e6e7c36553" class="">branch ends</p><p id="1abc85b8-c83b-8039-8677-f631ffb60c30" class="">if human:</p><p id="1abc85b8-c83b-80cc-8cdc-d7358e7b5335" class="">branch ends</p><p id="1abc85b8-c83b-803f-ae50-d80906c49e4e" class="">if branch ends:</p><p id="1abc85b8-c83b-8045-b94a-cbbe2ccea3d0" class="">grow leaf</p><p id="1abc85b8-c83b-8084-97ff-e9ac728b60e2" class="">}</p><p id="1abc85b8-c83b-80f5-bc0b-c861901c17cd" class="">
+</p><p id="1abc85b8-c83b-8090-9c93-c5dc1489796f" class="">.lessdominant1 {</p><p id="1abc85b8-c83b-806a-aeb2-f03dcfad831b" class="">grow between 2 and 4 cm</p><p id="1abc85b8-c83b-809d-b223-e2976af31c34" class="">chance of 2 new branches: 50%</p><p id="1abc85b8-c83b-808d-b71a-c1899b9905a4" class="">if new branches:</p><p id="1abc85b8-c83b-8033-be57-d990c24a700f" class="">chose dominant branch</p><p id="1abc85b8-c83b-805c-9adc-c8c0b33bccd5" class="">chance of wind breaking branch: 50%</p><p id="1abc85b8-c83b-80c9-82f8-fa5042ca400f" class="">chance of human breaking branch: 50%</p><p id="1abc85b8-c83b-8041-898e-eed4636b8c50" class="">if wind:</p><p id="1abc85b8-c83b-8019-b81e-eae10a634a02" class="">branch ends</p><p id="1abc85b8-c83b-805e-aa53-d7b37765947e" class="">if human:</p><p id="1abc85b8-c83b-8003-a61b-c9ec31713043" class="">branch ends</p><p id="1abc85b8-c83b-80d4-a87f-f6737883893e" class="">if branch ends:</p><p id="1abc85b8-c83b-80d0-b89a-efe04fb09932" class="">grow leaf</p><p id="1abc85b8-c83b-8026-8012-eca813342788" class="">}</p><p id="1abc85b8-c83b-80d9-bcd6-d21e93408fb5" class="">
+</p><p id="1abc85b8-c83b-8067-a1dc-cb5fd87da902" class="">.dominant2 {</p><p id="1abc85b8-c83b-80f1-a123-f8e811beba9f" class="">grow between 3 and 4 cm</p><p id="1abc85b8-c83b-80e2-a1dd-c1e75dcd8f68" class="">chance of 2 new branches: 90%</p><p id="1abc85b8-c83b-80c9-ab7b-f6fe8e229d43" class="">chance of wind breaking branch: 5%</p><p id="1abc85b8-c83b-8055-bf36-f3e1fd5702f2" class="">chance of human breaking branch: 5%</p><p id="1abc85b8-c83b-80f6-a1ed-c5512756f867" class="">if wind:</p><p id="1abc85b8-c83b-804c-aefd-e835c52c966a" class="">branch ends</p><p id="1abc85b8-c83b-80e5-8b07-f94b409f9468" class="">if human:</p><p id="1abc85b8-c83b-80d1-9f51-e603146d6053" class="">branch ends</p><p id="1abc85b8-c83b-800f-b24b-d876f9aeea3b" class="">if branch ends:</p><p id="1abc85b8-c83b-8061-844e-d1ffbdbc339e" class="">grow leaf</p><p id="1abc85b8-c83b-809f-ab90-c9985e0aed37" class="">}</p><p id="1abc85b8-c83b-8026-9885-d4dbad8f2989" class="">
+</p><p id="1abc85b8-c83b-80b2-9561-c2cfb18aac2f" class="">.lessdominant2 {</p><p id="1abc85b8-c83b-80c2-acfc-e442a357e37e" class="">grow between 2 and 3 cm</p><p id="1abc85b8-c83b-80fe-99a9-f6ae1c04959b" class="">chance of 2 new branches: 25%</p><p id="1abc85b8-c83b-80ee-baa5-d9e0d6613845" class="">if new branches:</p><p id="1abc85b8-c83b-8083-9a1e-f311dc2cd927" class="">chose dominant branch</p><p id="1abc85b8-c83b-80a2-81a9-d49b8c182587" class="">chance of wind breaking branch: 60%</p><p id="1abc85b8-c83b-80a8-a38f-cec733f3ab2b" class="">chance of human breaking branch: 60%</p><p id="1abc85b8-c83b-80d2-8afa-f455111a0c77" class="">if wind:</p><p id="1abc85b8-c83b-80ff-8d0b-fcb48f5247e6" class="">branch ends</p><p id="1abc85b8-c83b-80b8-b595-d0b22d188006" class="">if human:</p><p id="1abc85b8-c83b-808d-b7d4-d467fca40f56" class="">branch ends</p><p id="1abc85b8-c83b-80fb-b485-c5e49b674d72" class="">if branch ends:</p><p id="1abc85b8-c83b-8004-a4d1-eb35073b9c73" class="">grow leaf</p><p id="1abc85b8-c83b-8003-817a-c876d91cbad9" class="">}</p><p id="1abc85b8-c83b-8007-9d8d-ddd9c401ae32" class="">
+</p><p id="1abc85b8-c83b-80ed-a85b-d91dd0937274" class="">.dominant{</p><p id="1abc85b8-c83b-8099-815f-f47d0912d0f9" class="">for each 2 new branches:</p><p id="1abc85b8-c83b-80ad-b55b-d3982467e12f" class="">decrease chance of new branches in 5% intervals, up to 99%</p><p id="1abc85b8-c83b-807f-9c1e-e2cfc785c083" class="">decrease chance of growth lenght in 1cm intervals, until 1cm is the greatest lenght</p><p id="1abc85b8-c83b-802b-84e7-d38a2e2cd9e7" class="">increase chance of human breakage in 10% intervals, up to 99%</p><p id="1abc85b8-c83b-803d-9eda-daacbb1e3a11" class="">increase chance of wind breakage in 10% intervals, up to 99%</p><p id="1abc85b8-c83b-8040-973b-ef0d32bd0988" class="">if branch breaks:</p><p id="1abc85b8-c83b-8059-b14c-d1bb33251c9f" class="">grow leaf</p><p id="1abc85b8-c83b-8021-b5d5-c486527a2a07" class="">}</p><p id="1abc85b8-c83b-808e-a43e-eaeebd42201c" class="">
+</p><p id="1abc85b8-c83b-806a-b3f8-d8e6db678f80" class="">.lessdominant{</p><p id="1abc85b8-c83b-80f7-baf6-c76c3e6730df" class="">for each 2 new branches:</p><p id="1abc85b8-c83b-80b2-bb60-f4628665670a" class="">decrease chance of new branches in 10% intervals, up to 99%</p><p id="1abc85b8-c83b-80b6-b0c0-ddc257453ec8" class="">decrease chance of growth lenght in 1,5cm intervals, until 1cm is the greatest lenght</p><p id="1abc85b8-c83b-803f-9169-cda63dfd9d99" class="">increase chance of human breakage in 20% intervals, up to 99%</p><p id="1abc85b8-c83b-803d-bdb1-d8fa4e52d7b1" class="">increase chance of wind breakage in 20% intervals, up to 99%</p><p id="1abc85b8-c83b-80fe-b12c-c1d1303ce007" class="">if branch breaks:</p><p id="1abc85b8-c83b-801a-bdb8-d5bc41291563" class="">grow leaf</p><p id="1abc85b8-c83b-80a2-81b8-c6d51cfad5f1" class="">}</p><p id="1abc85b8-c83b-808b-b56d-da1f4af6d6de" class="">
+</p><p id="1abc85b8-c83b-8009-b04e-c628c2a4a307" class=""><strong>Week 4 &amp; 5 – Working on the Design</strong></p><p id="1abc85b8-c83b-8009-a745-c7f3c20b6dec" class="">Esolangs — Esoteric programming languages</p><figure id="1fac85b8-c83b-80fd-821f-ddec469315d0" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/603B2B90-B4FA-4805-8BE9-7881611A8A14_1_105_c.jpeg"><img style="width:633px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/603B2B90-B4FA-4805-8BE9-7881611A8A14_1_105_c.jpeg"/></a><figcaption>Poster Iteration 1</figcaption></figure><p id="1fac85b8-c83b-80a3-a28b-ce252c38f3e8" class="">For the design of the I ended up going very minimal and used very abstract elements to construct the branch. I did this because I was sort of imagining how a computer or a program would interpret my code. To differentiate between the dominant/non-dominant branches I decided to use full and broken lines. This unfortunately isn’t present in the final version of the poster due to the pen plotter not recognising them.</p><p id="1fac85b8-c83b-80e0-b5e4-e01828b0a848" class="">I chose pen plotting due to the fact that it functions in a similar way to my pseudocode, however seeing that it wasn’t able to execute my design how I wanted it to, I don’t think it was the best choice. Because I didn’t have enough time I decided not to redo it or try any other mediums or printing techniques. </p><figure id="1fac85b8-c83b-80f3-aeb0-e0eb87ae5c24" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/5AC88B88-5A69-4E90-B06B-72AFA6538CEE_1_201_a.heic"><img src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/5AC88B88-5A69-4E90-B06B-72AFA6538CEE_1_201_a.heic"/></a><figcaption>Poster Final Iteration Variants</figcaption></figure><p id="1fac85b8-c83b-807d-8763-fd4eca91089e" class="">I did, however, experiment with a lot of different colors and font sizes, so I ended up with a very diverse group of posters.</p><p id="1fac85b8-c83b-80a1-a1f7-fa339f21f1b4" class="">
+</p><figure id="1fac85b8-c83b-802f-9f83-ddb3eabfbcdf" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/2FCB9B2E-69BD-4743-9BD5-126234F55E70_1_105_c.jpeg"><img style="width:633px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/2FCB9B2E-69BD-4743-9BD5-126234F55E70_1_105_c.jpeg"/></a><figcaption>Final Poster</figcaption></figure><h2 id="1abc85b8-c83b-806c-ae9c-f2b14fcdb981" class="">Project Part 2</h2><p id="1c7c85b8-c83b-806e-824e-ee8a1d980be2" class="">
+</p><p id="1c7c85b8-c83b-80fd-9011-ed5da38437d6" class=""><strong>Week 6 – Ideas Ideas Ideas</strong></p><p id="1c0c85b8-c83b-806b-a52a-e9bb4cb6edea" class="">
+</p><p id="1c0c85b8-c83b-80b6-a9c2-f4371316811f" class="">Initial ideas small: to BIG</p><ol type="1" id="1c0c85b8-c83b-8021-9ae0-e52c3e768982" class="numbered-list" start="1"><li>looking at branches from the perspective of bugs</li></ol><ol type="1" id="1c0c85b8-c83b-80da-9d4e-ce0f4321e512" class="numbered-list" start="2"><li>game for babies where they connect branches</li></ol><ol type="1" id="1c0c85b8-c83b-8043-9eff-e75e2918cdfd" class="numbered-list" start="3"><li>phone game</li></ol><ol type="1" id="1c0c85b8-c83b-80ad-908e-fd50e530f10a" class="numbered-list" start="4"><li>generative animation of branches growing</li></ol><ol type="1" id="1c0c85b8-c83b-8052-a3b6-eb1336fd95fb" class="numbered-list" start="5"><li>big wooden game (like the ones of trains) for children</li></ol><ol type="1" id="1c0c85b8-c83b-8016-9831-f4adff4f8c00" class="numbered-list" start="6"><li>adding new branches to already existing trees</li></ol><ol type="1" id="1c0c85b8-c83b-809c-9c45-eb35cab9de15" class="numbered-list" start="7"><li>making my own river</li></ol><ol type="1" id="1c0c85b8-c83b-80bc-a44b-cd35cfdd73b8" class="numbered-list" start="8"><li>making my own forest out of branches</li></ol><p id="1c0c85b8-c83b-801d-9dd0-c7e5d8d9e7e3" class="">
+</p><p id="1c0c85b8-c83b-80e1-b95f-e0051931d49d" class="">I like the idea about adding new branches to trees the most. Maybe it could be interactive, creating a list of rules participants would follow, giving them a set of materials and tools and seeing what kind of crazy tree they come up with. </p><div id="1c0c85b8-c83b-80f8-8623-e27e1a3bc3b2" class="column-list"><div id="1c0c85b8-c83b-8090-9e43-e536bcdefa8f" style="width:33.333333333333336%" class="column"><figure id="1c0c85b8-c83b-805e-a4bb-dfe950ff480a" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/E531E8C6-85A3-4347-B78B-E7A94A3399DE_1_105_c.jpeg"><img style="width:307.5px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/E531E8C6-85A3-4347-B78B-E7A94A3399DE_1_105_c.jpeg"/></a></figure></div><div id="1c0c85b8-c83b-80d7-ab64-e330fab347ca" style="width:33.333333333333336%" class="column"><figure id="1c0c85b8-c83b-8045-8dd6-fb982826ce5d" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/81083FD6-5861-4D6A-BEB5-113FAF6E0E64_1_105_c.jpeg"><img style="width:307.5px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/81083FD6-5861-4D6A-BEB5-113FAF6E0E64_1_105_c.jpeg"/></a></figure></div><div id="1c0c85b8-c83b-803b-9338-e27100535247" style="width:33.33333333333333%" class="column"><figure id="1c0c85b8-c83b-8018-8ab6-f9e91a15a1ea" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/CD550A03-4C9C-4F2E-B84E-95AA8A215D8C_1_105_c.jpeg"><img style="width:192px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/CD550A03-4C9C-4F2E-B84E-95AA8A215D8C_1_105_c.jpeg"/></a></figure></div></div><p id="1c0c85b8-c83b-80cf-88b8-f5de912e8634" class="">
+</p><figure id="1c0c85b8-c83b-8023-8918-e7f7dc926e87" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/0F46E380-80DF-460F-BC6E-6C166DFC36E2_1_105_c.jpeg"><img style="width:663px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/0F46E380-80DF-460F-BC6E-6C166DFC36E2_1_105_c.jpeg"/></a></figure><figure id="1c0c85b8-c83b-809e-881f-c036c145350b" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/ABE1A4A6-A97B-4B1F-A1B4-79F3DDB25156_1_105_c.jpeg"><img style="width:663px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/ABE1A4A6-A97B-4B1F-A1B4-79F3DDB25156_1_105_c.jpeg"/></a></figure><figure id="1c0c85b8-c83b-807b-81e5-d914b4d5198a" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/1BB3382E-4253-4815-8E19-76FE1307CEBE_1_105_c.jpeg"><img style="width:663px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/1BB3382E-4253-4815-8E19-76FE1307CEBE_1_105_c.jpeg"/></a></figure><p id="1c0c85b8-c83b-80d8-9918-c383dde2812b" class="">
+</p><p id="1c0c85b8-c83b-8087-acda-eaebf7fb198c" class="">Material Ecology of Artificial Botany, Miao Li</p><p id="1c0c85b8-c83b-807d-ad98-db460af61e1c" class="">
+</p><p id="1c0c85b8-c83b-8094-bfe6-f562d7830716" class="">During this workshop, we will be hands-on and produce a series of 3D sketches of artificial plants. No skills or experience of making are required. We intend to use simple tools and techniques. Then we will together unfold the material ecology, the relationship between human, material, and environment, of each individual’s work. In the end, we will look at how the work and material ecology can composite a biotope within the academy.</p><p id="1c0c85b8-c83b-804c-a503-ee2019e1edbc" class="">
+</p><figure id="1c0c85b8-c83b-80f0-a297-e51905d7bc3f" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/CD550A03-4C9C-4F2E-B84E-95AA8A215D8C_1_105_c%201.jpeg"><img style="width:663px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/CD550A03-4C9C-4F2E-B84E-95AA8A215D8C_1_105_c%201.jpeg"/></a></figure><p id="1c7c85b8-c83b-80d8-9387-fd0f36d76836" class="">
+</p><p id="1c7c85b8-c83b-8022-b166-d7b280d13e18" class=""><strong>Week 7 – Refining ideas, Adding Context</strong></p><p id="1c8c85b8-c83b-80fe-971d-d8a4453c39e8" class="">
+</p><figure id="1c8c85b8-c83b-800a-a5cf-dd13c1fdc87b" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/sketch_000.jpg"><img style="width:3437px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/sketch_000.jpg"/></a></figure><p id="1c7c85b8-c83b-80ec-bd4e-f621b86dcd7a" class="">After coming up with sever ideas as to how this project could take shape, I noted which aspects of each idea I’d like to work with. For example I really enjoyed the concept of creating a sort of children’s train game inspired project using branches. I also liked the idea to create my own trees (as much as I possibly can.) </p><p id="1c7c85b8-c83b-800d-b370-f194c4018b59" class="">I thought that these two concepts could be combined into a sort of modular “game” also in part inspired by my poster. It could include these sort of abstract shapes which could in some way connect to create a branch or even a mini plant.</p><p id="1c7c85b8-c83b-80b0-8c58-da8d237bbcca" class="">I think this is a nice way that I can execute this project and it could work really well with all the research I’ve conducted. Although it is missing some context. I feel like if I don’t have a place in which I could ground (funny to think of this project as a tree that’s planted in some certain soil) this work, it would have little to no impact. It could just exist as a product to be bought, but it wouldn’t have much meaning or reason to it.</p><figure id="1c8c85b8-c83b-8057-86f6-c172b01dfc63" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/sketch_001.jpg"><img style="width:3437px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/sketch_001.jpg"/></a></figure><p id="1c7c85b8-c83b-80c6-a5ab-d9ff30e327b3" class="">What a user could possibly do with this project is actually create an artificial tree or plant. I think it’s interesting to think of what this could mean. As we’ve found out many places in the world that we consider to be “natural” are actually the exact opposite, and we’re planted there by humans, such as the Sonsbeek park. Maybe by creating a generative work of a tree that is so obviously artificial and abstract could provide some perspective on this. I think it’s also important to imagine it in a certain space – if it’s placed outside, in “nature,” it could become a comment on (Artificial) Botany. </p><p id="1c7c85b8-c83b-8067-ad45-cdbbaaa0e24c" class="">This context could also greatly influence the project’s design aspects. I could choose intentionally “unnatural” materials so that the object stands out in “nature.” On the other hand I could choose stereotypically “natural” elements to deepen the irony.</p><p id="1c7c85b8-c83b-8000-ae8c-e7ed24a6f98e" class="">Also something to consider is who is going to be creating these objects. Is it me? Is a participatory project? And if so what rules or instructions do I give the participants? Obviously the rules from the pseudocode on the poster can’t be used since they heavily rely on chance, which in this case isn’t a viable aspect of the project.</p><p id="1fac85b8-c83b-8089-95c8-d4f1b4f045a4" class="">
+</p><p id="1c7c85b8-c83b-80ca-9203-ddfc95d92c93" class=""><strong>Week 8 – Embroidery</strong></p><p id="1fac85b8-c83b-80c5-855c-cefdd55780f3" class="">After reflecting on ideas I had the previous week, I decided that it wasn’t that important for my project that it’s something that other people necessarily have to create. It can still be interactive in different ways.</p><p id="1fac85b8-c83b-8095-8e72-e772fe493e23" class="">Since I also was feeling kind of sad that my ideas didn’t really include coding, as a start to this process I decided to create a website that would basically follow the pseudocode I created for the poster. Unfortunately I didn’t really know how to do this by myself so I utilised ChatGPT. </p><p id="1fac85b8-c83b-80db-8c62-d766e4ed0640" class="">Here’s a link to the website: <a href="https://treegenerator.glitch.me/">https://treegenerator.glitch.me</a></p><div id="1fac85b8-c83b-80c8-bb24-e93dcf052ce1" class="column-list"><div id="1fac85b8-c83b-808f-be78-efe7f79058f3" style="width:50%" class="column"><figure id="1fac85b8-c83b-8062-ad80-eb143f7e6882" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/Screenshot_2025-05-21_at_12.54.12.png"><img style="width:336px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/Screenshot_2025-05-21_at_12.54.12.png"/></a></figure><p id="1fac85b8-c83b-8068-9f48-e6c97452a290" class="">
+</p></div><div id="1fac85b8-c83b-8070-8bdc-eb280c2487cb" style="width:49.999999999999986%" class="column"><p id="1fac85b8-c83b-80ed-be87-f857b832a392" class="">This is what the website looks like. Obviously ChatGPT didn’t have much to do with the design decisions, but it certainly did do most of the work. I did, however, end up tweaking some things to fit my concept more.</p><p id="1fac85b8-c83b-8094-af39-dea99bda5f80" class="">Looking at the website like this I thought about how the trees were structured really reminded me of embroidery – and I though that embroidery would be a really great technique to use for this project. </p><p id="1fac85b8-c83b-800f-8a04-fc004cd4192f" class="">I think there is this unexpected connection between coding and embroidery. For example the fact that in coding you have the input or the language you are using to make your code come to life as well as the external look of it, when you open a web page. In the same way with embroidery, there is the front – the design and the back of the piece – the code. </p><p id="1fac85b8-c83b-8090-959a-f8c369beda77" class="">I think using this technique also compliments my research – this sort of connection between me as a human, the tree and programs. </p><p id="1fac85b8-c83b-80f4-8f15-ceb3d61974fe" class="">What I’d like to maybe do is create a couple of smaller tapestries which would each have a different tree on them.</p></div></div><p id="1fac85b8-c83b-8025-8d4a-e4a8865b10ef" class="">Here’s some sketches of my ideas + how it can be exhibited</p><figure id="1fac85b8-c83b-804f-bdb3-d85946245a92" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/BFAA5054-1BB1-4419-9DE3-D4815C49E8FE_1_105_c.jpeg"><img style="width:710px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/BFAA5054-1BB1-4419-9DE3-D4815C49E8FE_1_105_c.jpeg"/></a></figure><p id="1fac85b8-c83b-80ff-bdbb-f35fbd57bba6" class="">
+</p><p id="1fac85b8-c83b-804b-af98-f763f1d578a8" class=""><strong>Week 9, 10, 11 – Experimentation with Stitches</strong></p><p id="1fac85b8-c83b-80bf-9290-ebafe4fea493" class="">I started off with a couple experiments. I chose to work on small 50x50cm cloths, which is the size I had imagined. I also experimented with a couple of different stitch techniques and adapted them later. </p><div id="1fac85b8-c83b-8064-bebf-c0fdceea4c2f" class="column-list"><div id="1fac85b8-c83b-80f2-af10-ff91e2d9fa67" style="width:33.333333333333336%" class="column"><figure id="1fac85b8-c83b-8014-ab7a-f839c1e712b4" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1278.jpeg"><img style="width:3024px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1278.jpeg"/></a></figure></div><div id="1fac85b8-c83b-80f4-a333-ceccaf67e06f" style="width:33.333333333333336%" class="column"><figure id="1fac85b8-c83b-802e-bd39-eff6d605c9e3" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1279.jpeg"><img style="width:3024px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1279.jpeg"/></a></figure></div><div id="1fac85b8-c83b-80d2-84db-fa6d3b9287e7" style="width:33.33333333333333%" class="column"><figure id="1fac85b8-c83b-80ee-a92b-ec5d2e0c25cf" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1280.jpeg"><img style="width:3024px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1280.jpeg"/></a></figure></div></div><figure id="1fac85b8-c83b-8034-8d3a-c7813363d7f7" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1277.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1277.jpeg"/></a></figure><p id="1fac85b8-c83b-80cf-ada8-f08dd9086bda" class="">I’m very happy that I decided to first do some experiments instead of immediately working on the final pieces because I really did need some time to experiment with size and stitches.</p><p id="1fac85b8-c83b-800d-8e9d-c95261017560" class="">I also decided to try and also embroider some leaves just to see how it would look like. I think it really did add a lot to the little tapestries and made them a bit more complex.</p><figure id="1fac85b8-c83b-8026-87da-db98a3224976" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidery1_001_2.jpg"><img style="width:2409px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidery1_001_2.jpg"/></a></figure><p id="1fac85b8-c83b-808f-8182-f24c6410ba58" class=""><strong>Week 12 – Production + First  Exhibition try-outs</strong></p><p id="1fac85b8-c83b-80db-9e68-e19a93c11ad4" class="">After my experiments I felt like I knew how I wanted the final tapestries to look like. I bought new fabric that was 100% cotton and implemented the techniques I’ve come up with. </p><p id="1fac85b8-c83b-80ac-adaa-ed4e1ea0a326" class="">I chose 3 new trees from the website to work with, so that the final work would end up being a sort of triptych. I chose them based on their diversity – I wanted to chose trees that really showcased the different possibilities the code could create – I chose one really narrow tree, one really centred tree and one that sort of swayed to one side. I though that it would give the project much more meaning if I curated the selection of trees, rather than just leaving it up to chance.</p><p id="1fac85b8-c83b-80fd-adf5-cf28f6dad0e7" class="">These are the trees I ended up embroidering (sorry that they’re so tiny):</p><div id="1fac85b8-c83b-802e-a09f-cdf22ee4c48b" class="column-list"><div id="1fac85b8-c83b-8075-94c2-f517d6b3d196" style="width:33.333333333333336%" class="column"><figure id="1fac85b8-c83b-80ae-b833-c28e4ad617fa" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidertree_1.png"><img style="width:432px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidertree_1.png"/></a></figure></div><div id="1fac85b8-c83b-805b-8d1f-d0dc7f114ae4" style="width:33.333333333333336%" class="column"><figure id="1fac85b8-c83b-8060-ae53-f633d031e2e7" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidertree_2.png"><img style="width:2400px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidertree_2.png"/></a></figure></div><div id="1fac85b8-c83b-805c-9c28-e681e482c468" style="width:33.33333333333333%" class="column"><figure id="1fac85b8-c83b-8042-b100-d3fdc31765de" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidertree3.png"><img style="width:2400px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/embroidertree3.png"/></a></figure></div></div><div id="1fac85b8-c83b-80c9-a405-c594ee547ec1" class="column-list"><div id="1fac85b8-c83b-8019-a4d9-c0b037299f6b" style="width:50.000000000000014%" class="column"><figure id="1fac85b8-c83b-8085-a4cd-d764b9d8d2cf" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1400.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1400.jpeg"/></a></figure><p id="1fac85b8-c83b-8056-a056-ea9a1b9fddf4" class="">
+</p></div><div id="1fac85b8-c83b-80fc-86b5-d802b6d81ef9" style="width:50%" class="column"><figure id="1fac85b8-c83b-80e0-9617-f357f8c4220b" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1401.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1401.jpeg"/></a></figure></div></div><p id="1fac85b8-c83b-80fe-a72c-f3cc24711978" class="">I also tested out how an exhibition of this work out side could look like. I had sketches of it being hung up on trees standing as a flag, or standing on its own. I tested these out and found that the ‘hanging on trees’ was the most effective, but I still needed to figure out how to securely attach it to the tree while also not damaging it.</p><div id="1fac85b8-c83b-8022-a20c-f5f464080eac" class="column-list"><div id="1fac85b8-c83b-80c9-824a-f89cfeb61d2f" style="width:50.000000000000014%" class="column"><figure id="1fac85b8-c83b-8016-aaf7-c1cf9b6f8ecb" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1392.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1392.jpeg"/></a></figure></div><div id="1fac85b8-c83b-80a2-ac0e-dd41e9be444f" style="width:50%" class="column"><figure id="1fac85b8-c83b-80ea-8df6-d0d3ab336f22" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1395.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1395.jpeg"/></a></figure></div></div><p id="1fac85b8-c83b-808c-98d3-e72618a36f91" class=""><strong>Week 13 – Figuring it out</strong></p><p id="1fac85b8-c83b-8068-bdcb-e97afc71258c" class="">Now that the designs are practically finished, I had time to actually figure out how to set this project up. I went to the tree I will be exhibiting on and found many broken branches on the ground. I though I could use them to hold the tapestries and then weave them in with the branches on the tree.</p><div id="1fac85b8-c83b-80f6-932a-feb4e8dd0b01" class="column-list"><div id="1fac85b8-c83b-8021-bae3-ddee5cc9940a" style="width:33.333333333333336%" class="column"><figure id="1fac85b8-c83b-8022-b0e3-e0ae3b1af7ca" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1430.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1430.jpeg"/></a></figure></div><div id="1fac85b8-c83b-805d-acb4-c5e3081012f3" style="width:33.333333333333336%" class="column"><figure id="1fac85b8-c83b-8036-8a02-c0a720b9f352" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1431.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1431.jpeg"/></a></figure></div><div id="1fac85b8-c83b-80da-9b50-fbbfd06b74ad" style="width:33.33333333333333%" class="column"><figure id="1fac85b8-c83b-8032-86be-d6a35d51ab98" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1434.jpeg"><img style="width:4032px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1434.jpeg"/></a></figure></div></div><p id="1fac85b8-c83b-80df-bb77-dad7d7eeee75" class="">I then sewed little hoops on the cloths and poked the sticks through. To my surprise this actually worked really well! I also tried different ways of putting the cloths on tree, trying to have more variation in set up.</p><div id="1fac85b8-c83b-807e-bba2-e610f28dba58" class="column-list"><div id="1fac85b8-c83b-8006-b6e6-cdbcf7c3547c" style="width:50%" class="column"><figure id="1fac85b8-c83b-8069-9e43-de8da897abef" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/F03FACB3-9E73-4461-9279-78E02E8BCBA1_1_105_c.jpeg"><img style="width:331.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/F03FACB3-9E73-4461-9279-78E02E8BCBA1_1_105_c.jpeg"/></a></figure></div><div id="1fac85b8-c83b-80dc-bbb8-c60c4e4ab794" style="width:50%" class="column"><figure id="1fac85b8-c83b-8090-8dfb-c2c010a19db2" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/AE9A04A3-47E9-4FC7-8EEA-6CBDB85C5521_1_105_c.jpeg"><img style="width:331.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/AE9A04A3-47E9-4FC7-8EEA-6CBDB85C5521_1_105_c.jpeg"/></a></figure></div></div><p id="1fac85b8-c83b-80b6-811a-cd711bffa593" class="">I also considered how I could also include the website me and ChatGPT made, since I don’t think putting my laptop outside on a pillar would look good in combination with the embroidered tapestries.</p><div id="1fac85b8-c83b-80fe-8157-d829050c79bb" class="column-list"><div id="1fac85b8-c83b-805c-aa3f-ca8c96201644" style="width:50%" class="column"><figure id="1fac85b8-c83b-8094-ba60-f70433c03240" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1436.jpeg"><img style="width:3024px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/IMG_1436.jpeg"/></a></figure></div><div id="1fac85b8-c83b-8083-b510-f3c9d0f73ad4" style="width:50%" class="column"><figure id="1fac85b8-c83b-80b1-8a1a-fc2fcf2e863e" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/8EB3DC8E-8FE6-4263-8F2A-1B529E5A21D3_1_105_c.jpeg"><img style="width:448.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/8EB3DC8E-8FE6-4263-8F2A-1B529E5A21D3_1_105_c.jpeg"/></a></figure></div></div><p id="1fac85b8-c83b-80d2-bd99-d810086515d7" class="">I decided to cross-stitch a QR code that leads to my website, and while it did take a while to finish, it looks really good and blends in really well with the cloths.</p><div id="1fac85b8-c83b-80b0-b08f-e7dc4f0d6b8a" class="column-list"><div id="1fac85b8-c83b-8000-b35a-efc8b4bf5ff3" style="width:50%" class="column"><figure id="1fac85b8-c83b-8067-91f6-ef35f2508cd9" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/D37BFF15-9619-4CFF-A6A7-5C8EE13196D3_1_105_c.jpeg"><img style="width:448.9921875px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/D37BFF15-9619-4CFF-A6A7-5C8EE13196D3_1_105_c.jpeg"/></a></figure></div><div id="1fac85b8-c83b-8070-893f-f64dcd26d648" style="width:50.000000000000014%" class="column"><figure id="1fac85b8-c83b-8075-b44a-cbd683463b19" class="image"><a href="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/0C67F8AB-FD3B-4990-8CB8-F02D1A14BA12_1_102_o.jpeg"><img style="width:1536px" src="Interactive%20Media%20(YR3%20SEM2)%20196c85b8c83b80f49c12f35f5f3ac161/0C67F8AB-FD3B-4990-8CB8-F02D1A14BA12_1_102_o.jpeg"/></a></figure></div></div><p id="1fac85b8-c83b-803d-bc7c-d72a96a27d29" class=""><strong>Final Reflection</strong></p><p id="1fac85b8-c83b-8083-ace1-cd9429a5cc9a" class="">I really enjoyed this semester of Interactive Media. I think I was never too set on one idea and managed to let the process lead the way. I believe that through research and experimentation I managed to find a lot of interesting things and ideas. For example, I’ve never before considered the similarities between embroidery and coding, but through this project I was able to discover it. </p><p id="1fac85b8-c83b-801a-bf87-c20bb174d683" class="">For the poster I think I could have managed my time better – especially because I ended up printing it very last minute and therefore wasn’t able to reconsider design or medium choices.</p><p id="1fac85b8-c83b-8073-a2a5-e793e2a06814" class="">I think it’s also super interesting that even when I look back at what I was observing that first week in Sonsbeek is still somehow present in my final work even though I let myself get off the ‘branch’ track, like when I was researching fractals.</p><p id="1fac85b8-c83b-8032-86f6-d2d02e7c5023" class="">Overall I consider this semester a huge success.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
